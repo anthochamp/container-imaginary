@@ -33,8 +33,8 @@ RUN set -ex; \
 	vips-poppler
 
 COPY --from=builder /go/bin/imaginary /usr/local/bin/imaginary
-COPY --chmod=777 /rootfs/docker-entrypoint.sh /
-COPY --chmod=777 /rootfs/docker-healthcheck.sh /
+COPY --chmod=775 /rootfs/docker-entrypoint.sh /
+COPY --chmod=775 /rootfs/docker-healthcheck.sh /
 
 ENV IMAGINARY_PORT=9000
 
