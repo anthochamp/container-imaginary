@@ -1,4 +1,4 @@
-FROM golang:alpine3.19 AS builder
+FROM golang:alpine3.19@sha256:5f3336882ad15d10ac1b59fbaba7cb84c35d4623774198b36ae60edeba45fd84 AS builder
 
 # this one is required but non-released :
 # https://github.com/h2non/imaginary/commit/cfbf8d724cd326e835dfcb01e7224397c46037d3
