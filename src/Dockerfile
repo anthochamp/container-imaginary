@@ -1,11 +1,11 @@
 FROM golang:alpine@sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039 AS builder
 
-# this one is required but non-released :
+# This feature is required but not yet released:
 # https://github.com/h2non/imaginary/commit/cfbf8d724cd326e835dfcb01e7224397c46037d3
 #
-# set to latest commit on master branch
-# https://github.com/h2non/imaginary/commits/master/
-ENV IMAGINARY_HASH=6cd9edd1d3fb151eb773c14552886e4fc8e50138
+# Pin to a specific commit on master branch:
+# https://github.com/h2non/imaginary/commits/master/
+ARG IMAGINARY_HASH=6cd9edd1d3fb151eb773c14552886e4fc8e50138
 
 # hadolint ignore=DL3018
 RUN set -ex; \
@@ -16,7 +16,7 @@ RUN set -ex; \
 	vips-jxl \
 	vips-poppler \
 	build-base; \
-	go install github.com/h2non/imaginary@"$IMAGINARY_HASH";
+	go install github.com/h2non/imaginary@"${IMAGINARY_HASH}";
 
 FROM alpine:3.23.3@sha256:25109184c71bdad752c8312a8623239686a9a2071e8825f20acb8f2198c3f659
 
@@ -32,7 +32,7 @@ RUN set -ex; \
 	vips-jxl \
 	vips-poppler
 
-COPY --from=builder /go/bin/imaginary /usr/local/bin/imaginary
+COPY --from=builder /go/bin/imaginary /usr/local/bin/
 COPY --chmod=775 /rootfs/docker-entrypoint.sh /
 COPY --chmod=775 /rootfs/docker-healthcheck.sh /
 
