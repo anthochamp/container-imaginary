@@ -13,14 +13,21 @@ See [README.md](README.md) for full documentation and configuration reference.
 
 **Tag aliases:**
 
-- `x.y-imaginaryA.B.C`: Latest patch of `x.y` (major.minor) with imaginary `A.B.C`.
-- `x-imaginaryA.B.C`: Latest minor+patch of `x` (major) with imaginary `A.B.C`.
+- `x.y-imaginaryA.B.C`: Latest patch of `x.y` with imaginary `A.B.C`.
+- `x-imaginaryA.B.C`: Latest minor+patch of `x` with imaginary `A.B.C`.
+- `x.y.z-imaginaryA.B`: Version `x.y.z` with latest patch of imaginary `A.B` (only latest container version updated).
+- `x.y-imaginaryA.B`: Latest patch of `x.y` with latest patch of imaginary `A.B`.
+- `x-imaginaryA.B`: Latest minor+patch of `x` with latest patch of imaginary `A.B`.
+- `x.y.z-imaginaryA`: Version `x.y.z` with latest minor+patch of imaginary `A` (only latest container version updated).
+- `x.y-imaginaryA`: Latest patch of `x.y` with latest minor+patch of imaginary `A`.
+- `x-imaginaryA`: Latest minor+patch of `x` with latest minor+patch of imaginary `A`.
 - `x.y.z`: Version `x.y.z` with latest imaginary (only latest container version updated).
-- `x.y`: Latest patch of `x.y` (major.minor) with latest imaginary (only latest container major.minor updated).
-- `x`: Latest minor+patch of `x` (major) with latest imaginary (only latest container major updated).
-- `imaginaryA.B`: Latest container with latest patch of imaginary `A.B` (major.minor).
-- `imaginaryA`: Latest container with latest minor+patch of imaginary `A` (major).
+- `x.y`: Latest patch of `x.y` with latest imaginary.
+- `x`: Latest minor+patch of `x` with latest imaginary.
+- `imaginaryA.B.C`: Latest container with imaginary `A.B.C`.
+- `imaginaryA.B`: Latest container with latest patch of imaginary `A.B`.
+- `imaginaryA`: Latest container with latest minor+patch of imaginary `A`.
 - `latest`: Latest `x.y.z-imaginaryA.B.C` tag.
-- `edge-imaginaryA.B`: Latest commit build with latest patch of imaginary `A.B` (major.minor).
-- `edge-imaginaryA`: Latest commit build with latest minor+patch of imaginary `A` (major).
+- `edge-imaginaryA.B`: Latest commit build with latest patch of imaginary `A.B`.
+- `edge-imaginaryA`: Latest commit build with latest minor+patch of imaginary `A`.
 - `edge`: Latest `edge-imaginaryA.B.C` tag.

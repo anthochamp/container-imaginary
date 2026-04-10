@@ -1,5 +1,7 @@
 {
 	"private": true,
+	"description": "imaginary-based container for fast, scriptable high-level image processing",
+	"author": "Anthony Champagne <dev@anthonychampagne.fr>",
 	"scripts": {
 		"test": "node --import=tsx --test-concurrency 1 --test tests/**/*.test.*",
 		"tsc:check": "tsc -noEmit -p ./tsconfig.json",
