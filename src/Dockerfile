@@ -1,4 +1,4 @@
-FROM golang:alpine@sha256:c2a1f7b2095d046ae14b286b18413a05bb82c9bca9b25fe7ff5efef0f0826166 AS builder
+FROM golang:alpine@sha256:0178a641fbb4858c5f1b48e34bdaabe0350a330a1b1149aabd498d0699ff5fb2 AS builder
 
 # This feature is required but not yet released:
 # https://github.com/h2non/imaginary/commit/cfbf8d724cd326e835dfcb01e7224397c46037d3
@@ -18,7 +18,7 @@ RUN set -ex; \
 	build-base; \
 	go install github.com/h2non/imaginary@"${IMAGINARY_HASH}";
 
-FROM alpine:3.23.3@sha256:25109184c71bdad752c8312a8623239686a9a2071e8825f20acb8f2198c3f659
+FROM alpine:3.24.1@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b
 
 # hadolint ignore=DL3018
 RUN set -ex; \
